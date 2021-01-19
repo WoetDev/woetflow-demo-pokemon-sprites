@@ -1,4 +1,9 @@
-# woetflow-demo-seo-prerendering-and-meta-tags
+# woetflow-demo-pokemon-sprites
+
+## Blog posts
+This app is used as a demo in the following blog posts:
+* [Making SEO-friendly Vue Single Page Applications (SPA)](https://woetflow.com/posts/making-seo-friendly-vue-single-page-applications-spa)
+* [How to add Tailwind, VueTailwind and configure PurgeCSS](https://woetflow.com/posts/how-to-add-tailwind-vuetailwind-and-configure-purgecss)
 
 ## Project setup
 
