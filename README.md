@@ -1,5 +1,8 @@
 # woetflow-demo-pokemon-sprites
 
+## Demo
+App demo: [Pokémon Sprites](https://pokemon-sprites.netlify.app/)
+
 ## Blog posts
 This app is used as a demo in the following blog posts:
 * [Making SEO-friendly Vue Single Page Applications (SPA)](https://woetflow.com/posts/making-seo-friendly-vue-single-page-applications-spa)
@@ -10,6 +13,7 @@ This app is used as a demo in the following blog posts:
 #### Clone the current repository
 ```
 git clone https://github.com/WoetDev/woetflow-demo-pokemon-sprites
+cd woetflow-demo-pokemon-sprites
 ```
 
 #### Install dependencies
