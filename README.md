@@ -1,23 +1,30 @@
 # woetflow-demo-seo-prerendering-and-meta-tags
 
 ## Project setup
+
+#### Clone the current repository
 ```
-npm install
+git clone https://github.com/WoetDev/woetflow-demo-pokemon-sprites
+```
+
+#### Install dependencies
+```
+yarn install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+yarn serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+yarn build
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+yarn lint
 ```
 
 ### Customize configuration

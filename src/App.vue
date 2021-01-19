@@ -1,32 +1,38 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div id="app" class="bg-gray-700 min-h-screen">
+    <Header />
     <router-view />
   </div>
 </template>
 
+<script>
+import Header from "@/components/Header";
+
+export default {
+  name: "App",
+  metaInfo: {
+    titleTemplate: "%s | Pokémon Sprites"
+  },
+  jsonld() {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      url: "http://woetdev.github.io/woetflow-demo-pokemon-sprites",
+      logo: "https://i.imgur.com/bhxp07I.png"
+    };
+  },
+  components: {
+    Header
+  }
+};
+</script>
+
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Yusei Magic", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
