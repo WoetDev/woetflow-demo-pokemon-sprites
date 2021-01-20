@@ -1,6 +1,3 @@
-import Vue from "vue";
-import VueTailwind from "vue-tailwind";
-
 import TInput from "vue-tailwind/dist/t-input";
 import TTextarea from "vue-tailwind/dist/t-textarea";
 import TSelect from "vue-tailwind/dist/t-select";
@@ -17,7 +14,7 @@ export const settings = {
     component: TInput,
     props: {
       fixedClasses:
-        "block w-full px-3 py-2 transition duration-100 ease-in-out border rounded shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed",
+        "block w-full px-3 py-2 transition duration-100 ease-in-out border rounded shadow-sm focus:ring-2 focus:ring-red-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed",
       classes:
         "text-black placeholder-gray-400 bg-white border-gray-300 focus:border-blue-500 ",
       variants: {
@@ -233,5 +230,3 @@ export const settings = {
     }
   }
 };
-
-Vue.use(VueTailwind, settings);

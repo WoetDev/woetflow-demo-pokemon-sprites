@@ -7715,6 +7715,10 @@ vue-cli-plugin-prerender-spa@~1.1.6:
   dependencies:
     prerender-spa-plugin "^3.2.1"
 
+vue-cli-plugin-tailwind@~2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-tailwind/-/vue-cli-plugin-tailwind-2.0.5.tgz#955411fdcdb7735c6001e3f6912b06eeb1f052fc"
+
 vue-eslint-parser@^7.0.0:
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.3.0.tgz#894085839d99d81296fa081d19643733f23d7559"

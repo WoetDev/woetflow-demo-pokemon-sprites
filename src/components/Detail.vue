@@ -27,15 +27,7 @@
     </div>
   </div>
 </template>
-<meta property="og:title" content="The Rock" />
-<meta property="og:description" content="The Rock" />
-<meta property="og:type" content="video.movie" />
-<meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
-<meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
-<meta
-  property="og:image:alt"
-  content="A shiny red apple with a bite taken out"
-/>
+
 <script>
 import api from "@/api";
 

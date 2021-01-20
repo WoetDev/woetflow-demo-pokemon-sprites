@@ -36,6 +36,7 @@
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-prerender-spa": "~1.1.6",
+    "vue-cli-plugin-tailwind": "~2.0.5",
     "vue-template-compiler": "^2.6.11"
   }
 }

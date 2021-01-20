@@ -17,7 +17,7 @@ export default {
     return {
       "@context": "https://schema.org",
       "@type": "Organization",
-      url: "http://woetdev.github.io/woetflow-demo-pokemon-sprites",
+      url: window.location.origin,
       logo: "https://i.imgur.com/bhxp07I.png"
     };
   },
