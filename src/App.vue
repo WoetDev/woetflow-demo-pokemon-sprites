@@ -17,7 +17,7 @@ export default {
     return {
       "@context": "https://schema.org",
       "@type": "Organization",
-      url: window.location.origin,
+      url: "https://pokemon-sprites.netlify.app/",
       logo: "https://i.imgur.com/bhxp07I.png"
     };
   },
