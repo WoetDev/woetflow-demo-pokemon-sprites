@@ -1,28 +1,33 @@
 <template>
-  <div v-if="pokemon">
-    <div class="text-white text-center">
-      <div>
-        <img
-          class="m-auto"
-          :src="
-            pokemon['sprites']['other']['official-artwork']['front_default']
-          "
-        />
-      </div>
-      <div class="text-3xl">
-        <img
-          class="inline"
-          :src="
-            pokemon['sprites']['versions']['generation-vii']['icons'][
-              'front_default'
-            ]
-          "
-        />
-        {{ pokemon.name }}
-      </div>
-      <div class="mt-5">
-        <img class="inline-block" :src="pokemon.sprites.front_default" />
-        <img class="inline-block" :src="pokemon.sprites.back_default" />
+  <div>
+    <div v-if="error" class="text-white">
+      {{ error }}
+    </div>
+    <div v-if="pokemon">
+      <div class="text-white text-center">
+        <div>
+          <img
+            class="m-auto"
+            :src="
+              pokemon['sprites']['other']['official-artwork']['front_default']
+            "
+          />
+        </div>
+        <div class="text-3xl">
+          <img
+            class="inline"
+            :src="
+              pokemon['sprites']['versions']['generation-vii']['icons'][
+                'front_default'
+              ]
+            "
+          />
+          {{ pokemon.name }}
+        </div>
+        <div class="mt-5">
+          <img class="inline-block" :src="pokemon.sprites.front_default" />
+          <img class="inline-block" :src="pokemon.sprites.back_default" />
+        </div>
       </div>
     </div>
   </div>
@@ -35,7 +40,8 @@ export default {
   name: "Detail",
   data: () => ({
     pokemon: "",
-    description: ""
+    description: "",
+    error: ""
   }),
   metaInfo() {
     const pokemon = this.pokemon;
@@ -79,14 +85,19 @@ export default {
     };
   },
   created() {
-    return api.getPokemon(this.$route.params.name).then(response => {
-      this.pokemon = response.data;
-      const types = response.data.types.map(pokemon => {
-        return pokemon.type.name;
+    return api
+      .getPokemon(this.$route.params.name)
+      .then(response => {
+        this.pokemon = response.data;
+        const types = response.data.types.map(pokemon => {
+          return pokemon.type.name;
+        });
+        this.description =
+          this.pokemon.name + ": " + types.join(" / ") + " type pokémon";
+      })
+      .catch(err => {
+        this.error = `Woops! ${err.response.config.url} returned status ${err.response.status} ${err.response.data}`;
       });
-      this.description =
-        this.pokemon.name + ": " + types.join(" / ") + " type pokémon";
-    });
   }
 };
 </script>

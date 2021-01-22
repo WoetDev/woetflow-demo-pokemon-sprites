@@ -1,5 +1,8 @@
 <template>
   <div class="text-left">
+    <div v-if="error">
+      {{ error }}
+    </div>
     <div v-if="isLoading">
       Catching pokémon...
     </div>
@@ -30,6 +33,7 @@ export default {
   data: () => ({
     list: [],
     isLoading: true,
+    error: "",
     description: "All pokémon from first generation in the Kanto region"
   }),
   metaInfo() {
@@ -70,7 +74,7 @@ export default {
       .getPokemons()
       .then(response => {
         const requests = response.data.results.map(pokemon => {
-          return axios.get(pokemon.url);
+          return axios.get(pokemon.url.slice(0, pokemon.url.length - 1));
         });
         axios
           .all(requests)
@@ -92,9 +96,16 @@ export default {
               this.isLoading = false;
             })
           )
-          .catch(err => console.log(err));
+          .catch(err => {
+            console.log(err.response);
+            this.error = `Woops! ${err.response.config.url} returned status ${err.response.status} ${err.response.data}`;
+            this.isLoading = false;
+          });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        this.error = `Woops! ${err.response.config.url} returned status ${err.response.status} ${err.response.data}`;
+        this.isLoading = false;
+      });
   }
 };
 </script>
